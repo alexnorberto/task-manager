@@ -82,7 +82,7 @@ export class TaskListComponent implements OnInit {
     
   ) {
     this.todoList = 
-     defaultTodoList || taskLocalService.getData(todoListStorageKey) ;
+     taskLocalService.getData(todoListStorageKey) || defaultTodoList;
    }
 
   ngOnInit(): void {
@@ -90,13 +90,13 @@ export class TaskListComponent implements OnInit {
     this.route.params.subscribe(
       (params:Params) => {
         this.urlId = params.listId;
-
-        this.todoList.forEach((list)=>{
-          if (list._id == this.urlId){
-            this.activeListTitle = list.title;
-          }
-        });
-        
+        if (this.todoList != null) {
+          this.todoList.forEach((list)=>{
+            if (list._id == this.urlId){
+              this.activeListTitle = list.title;
+            }
+          });
+        }
         console.log("activeListTitle",this.activeListTitle);
       }
     );   

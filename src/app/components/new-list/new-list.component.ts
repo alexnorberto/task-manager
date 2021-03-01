@@ -46,6 +46,9 @@ export class NewListComponent implements OnInit {
     console.log("novo elemento:",newList);
 
     let temp = this.taskService.getData('Todo_List');
+    if(temp == null) { 
+      temp = [];
+    }
     temp.push(newList);
     this.taskService.setData('Todo_List',temp);
 

@@ -2,7 +2,6 @@ import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskLocalService } from '../task-list/task-local.service';
-import { TaskServiceService } from '../task-list/task-service.service';
 
 @Component({
   selector: 'app-delete-confirm',
