@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-title, a{
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    margin: 20px;
+}
+
+.centered-container {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.main-container{
+    min-width: 300px;
+    width: 800px;
+    height: 600px;
+    @media (max-width: 960px) {    
+        width: 350px;
+    }
+}
+
+h1 {
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.lists-container{
+    width: 240px;
+    height:100%;
+    background: var(--white);
+    padding: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+.lists-container-md{
+    max-width: 560px;
+    min-width: 300px;
+    width: 100%;
+    height: 80px;
+    background: var(--white);
+    padding: 0 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+.lists-subcontainer{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+ .mat-form-field{
+    width: 100%;
+    padding-top:20px;
+    margin-right: 15px;
+}
+
+
+/***********************************************************/
+/* TASKS */
+/***********************************************************/
+
+.tasks-container{
+    max-width: 560px;
+    height: 100%;
+    background: var(--gray);
+    padding: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    @media (max-width: 960px) {        
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width:100%;
+    }
+}
+
+.tasks-header{
+    width: 100%;
+}
+
+.tasks-subcontainer{
+    overflow: auto;
+    width: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.tasks-subcontainer::-webkit-scrollbar, .lists-subcontainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.tasks-subcontainer, .lists-subcontainer {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+
+
+.full-task-list{
+    width: 100%;        
+    @media (max-width: 960px) {
+        min-width: 300px;
+    }
+}
+
+.task{
+    width: calc(100% - 100px);
+    padding: 10px;
+    height: auto;
+    border-radius: 5px;
+    background: var(--white);
+    margin: 5px 10px 5px 5px;
+    cursor: pointer;
+
+    transition: all .7s ease;
+
+    &:not(.completed){
+
+        &:active{
+            transform: scale(.95);
+        }
+
+        &:hover{
+            background-color: var(--secondary)
+        }
+    }
+
+    &.completed{
+        text-decoration: line-through;
+        opacity: .8;
+    }
+}
+
+.task-actions{
+    width: 100px;
+}
+
+.actions{
+    &:active{
+        transform: scale(.95);
+    }
+
+    &:hover{
+        opacity: .8;
+    }
+}
+
+.task-add-button{    
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+/***********************************************************/
+/***********************************************************/
+
+
+
+.mat-raised-button.mat-success,
+.mat-flat-button.mat-success,
+.mat-fab.mat-success,
+.mat-mini-fab.mat-success {
+    color: var(--white);
+    background-color: var(--primary);
+
+    &.add-list-button{
+        width: 100%;
+    }
+
+}
+
+.mat-list-option{    
+    &.mat-list-option[aria-selected="true"] {
+        background: var(--secondary);
+    }
+
+    &.task{
+        margin:5px 0;
+        background: var(--white);
+        border-radius: 5px;
+
+        &.mat-list-option[aria-selected="true"] {
+            
+            text-decoration: line-through;
+        }
+    }   
+}
+
+.mat-pseudo-checkbox{
+    display: none !important;  
+}
+
+
